@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import HeaderBlock from './components/HeaderBlock';
 import './index.css';
-import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+// const AppList = () => {
+//     const items = ['i_1', 'i_2'];
+//
+//     return <ul> { items.map(item => <li>{item}</li>) } </ul>
+// };
 
+
+ReactDOM.render(<div><HeaderBlock/></div>, document.getElementById('root'));
