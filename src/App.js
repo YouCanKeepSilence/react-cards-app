@@ -1,18 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import HeaderBlock from "./components/HeaderBlock";
+import Header from "./components/Header";
+import Paragraph from "./components/Paragraph";
+import {ReactComponent as ReactLogoSvg} from './logo.svg';
+import Card from "./components/Card";
+import {wordsList} from "./wordsList";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello World!
-        </p>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <>
+            <HeaderBlock>
+                <Header>Учите слова онлайн</Header>
+                <Paragraph>Используйте карточки чтоб запоминать слова</Paragraph>
+            </HeaderBlock>
+            <HeaderBlock hideBackground>
+                <Header>Продолжим?</Header>
+                <ReactLogoSvg/>
+            </HeaderBlock>
+            <div>
+                {wordsList.map(({eng, rus}, idx) => (
+                    <Card key={idx} eng={eng} rus={rus} />
+                    )
+                )}
+            </div>
+        </>
+    )
 }
 
 export default App;
