@@ -5,6 +5,7 @@ import Paragraph from "./components/Paragraph";
 import {ReactComponent as ReactLogoSvg} from './logo.svg';
 import Card from "./components/Card";
 import {wordsList} from "./wordsList";
+import Container from "./components/Container";
 
 const App = () => {
     return (
@@ -17,12 +18,9 @@ const App = () => {
                 <Header>Продолжим?</Header>
                 <ReactLogoSvg/>
             </HeaderBlock>
-            <div>
-                {wordsList.map(({eng, rus}, idx) => (
-                    <Card key={idx} eng={eng} rus={rus} />
-                    )
-                )}
-            </div>
+            <Container startIndex={2} enableSlice>
+                {wordsList.map(({eng, rus}, idx) => <Card key={idx} eng={eng} rus={rus} />)}
+            </Container>
         </>
     )
 }
